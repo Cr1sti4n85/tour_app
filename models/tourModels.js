@@ -191,11 +191,11 @@ tourSchema.pre(/^find/, function (next) {
 });
 
 //Query post middleware
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`Query took ${Date.now() - this.start} miliseconds`);
-  //console.log(docs);
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Query took ${Date.now() - this.start} miliseconds`);
+//   //console.log(docs);
+//   next();
+// });
 
 //Aggregation middleware. Este va a remover los secret tours del query aggregation
 // tourSchema.pre('aggregate', function (next) {

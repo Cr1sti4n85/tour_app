@@ -36,7 +36,6 @@ module.exports = class Email {
   }
   //Envia la plantilla del correo
   async send(template, subject) {
-    console.log(template);
     //1 Render template
     const html = pug.renderFile(
       `${__dirname}/../views/emails/${template}.pug`,

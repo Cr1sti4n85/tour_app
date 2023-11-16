@@ -9,7 +9,7 @@ const bookTour = async (tourId) => {
     const response = await axios.post(
       `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`
     );
-    console.log(response.data.session.url);
+    // console.log(response.data.session.url);
     location.href = response.data.session.url;
   } catch (error) {
     showAlert('error', error);

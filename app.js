@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
-
+const compression = require('compression');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 
@@ -67,11 +67,9 @@ app.use(
     ],
   })
 );
-//middleware para colocar la fecha y hora en cada request
-app.use((req, res, next) => {
-  req.requestTime = new Date().toString();
-  next();
-});
+
+//compresses al the text sent to clients
+app.use(compression());
 
 //ROUTES
 app.use('/', viewRouter);

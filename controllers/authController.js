@@ -44,7 +44,6 @@ const createSendToken = (user, statusCode, res) => {
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
   const url = `${req.protocol}://localhost:3000/me`;
-  console.log('url del link', url);
   await new Email(newUser, url).sendWelcome();
   createSendToken(newUser, 201, res);
 });
@@ -162,7 +161,6 @@ exports.restrictTo = (...roles) => {
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
   //get user based on posted email
-  console.log(req.body.email);
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return next(new AppError('There is no user with that email address', 404));
@@ -185,7 +183,6 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
       message: 'Token sent to email',
     });
   } catch (error) {
-    console.log(error);
     //en caso de error se resetea el token temporal y su expiracion
     user.passwordResetToken = undefined;
     user.PasswordResetExpires = undefined;
