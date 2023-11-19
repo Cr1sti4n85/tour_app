@@ -1,8 +1,9 @@
+import axios from 'axios';
 import { showAlert } from './alerts.js';
-const loginForm = document.querySelector('.form--login');
-const logoutBtn = document.querySelector('.nav__el--logout');
+// const loginForm = document.querySelector('.form--login');
+// const logoutBtn = document.querySelector('.nav__el--logout');
 
-const login = async (email, password) => {
+export const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
@@ -24,7 +25,7 @@ const login = async (email, password) => {
   }
 };
 
-const logout = async () => {
+export const logout = async () => {
   try {
     const res = await axios({
       method: 'GET',
@@ -40,15 +41,15 @@ const logout = async () => {
   }
 };
 
-if (loginForm) {
-  document.querySelector('.form--login').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    login(email, password);
-  });
-}
+// if (loginForm) {
+//   document.querySelector('.form--login').addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
+//     login(email, password);
+//   });
+// }
 
-if (logoutBtn) {
-  logoutBtn.addEventListener('click', logout);
-}
+// if (logoutBtn) {
+//   logoutBtn.addEventListener('click', logout);
+// }

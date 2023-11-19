@@ -1,13 +1,13 @@
-const mapBox = document.getElementById('map');
+// const mapBox = document.getElementById('map');
 
-if (mapBox) {
-  const locations = JSON.parse(
-    document.getElementById('map').dataset.locations
-  );
-  displayMap(locations);
-}
+// if (mapBox) {
+//   const locations = JSON.parse(
+//     document.getElementById('map').dataset.locations
+//   );
+//   displayMap(locations);
+// }
 
-function displayMap(locations) {
+export const displayMap = (locations) => {
   mapboxgl.accessToken =
     'pk.eyJ1IjoiY3BlcmV6bGVjYXJvcyIsImEiOiJjbG42Y2JqYnowZHk5MmlxejFpbHFxaHVzIn0.bPLGX8Alcs_V6sUE7oOHMw';
   var map = new mapboxgl.Map({
@@ -49,4 +49,4 @@ function displayMap(locations) {
       right: 100,
     },
   });
-}
+};

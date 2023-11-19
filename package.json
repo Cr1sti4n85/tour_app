@@ -2,12 +2,14 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learning node express ",
-  "main": "app.js",
+  "targets": {
+    "default": {
+      "distDir": "public/js/src/"
+    }
+  },
   "scripts": {
     "start": "nodemon server.js",
-    "start:prod": "SET NODE_ENV=production&&nodemon server.js",
-    "watch:js": "parcel watch ./public/js/index.js --dist-dir ./public/js",
-    "build:js": "parcel watch ./public/js/index.js --dist-dir ./public/js"
+    "start:prod": "SET NODE_ENV=production&&nodemon server.js"
   },
   "author": "Cristian",
   "license": "ISC",
