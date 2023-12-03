@@ -31,10 +31,10 @@ mongoose
   });
 
 //START SERVER
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 //guardar la ejecucion del server en una constante para poder usarla en caso de error
-const server = app.listen(port, () => {
+const server = app.listen(port, '0.0.0.0', () => {
   console.log(`Running on port ${port}`);
 });
 

@@ -8,8 +8,8 @@
     }
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "start:prod": "SET NODE_ENV=production&&nodemon server.js"
+    "start": "node server.js",
+    "start:prod": "SET NODE_ENV=production&&node server.js"
   },
   "author": "Cristian",
   "license": "ISC",
@@ -38,9 +38,10 @@
     "validator": "^13.9.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.11",
     "parcel": "^2.9.3"
   },
   "engines": {
-    "node": "^18"
+    "node": "^20"
   }
 }

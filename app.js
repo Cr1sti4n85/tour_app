@@ -15,7 +15,8 @@ const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
-const viewRouter = require('./routes/viewroutes');
+const bookingController = require('./controllers/bookingController');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
@@ -45,6 +46,12 @@ const limiter = rateLimit({
 
 //aplicamos el rate limiter a las rutas que comienzan con /api
 app.use('/api', limiter);
+
+app.post(
+  '/webhook-checkout',
+  express.raw({ type: 'application/json' }),
+  bookingController.webhookCheckout
+);
 
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
