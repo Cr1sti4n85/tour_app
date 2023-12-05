@@ -2,11 +2,6 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learning node express ",
-  "targets": {
-    "default": {
-      "distDir": "public/js/src/"
-    }
-  },
   "scripts": {
     "start": "node server.js",
     "start:prod": "SET NODE_ENV=production&&node server.js"

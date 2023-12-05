@@ -11,3 +11,15 @@ header.header
 		else
 			a.nav__el(href='/login') Log in
 			a.nav__el.nav__el--cta(href='#') Sign Up
+	.hamburger
+		.bar1
+		.bar2
+		.bar3
+	nav.mobileNav
+		if user
+			a.nav__el--logout Log Out
+			a(href='/me') Profile
+		else
+			a.nav__el(href='/login') Log in
+			a.nav__el(href='#') Sign Up
+

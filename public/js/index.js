@@ -11,6 +11,7 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
+const hamburger = document.querySelector('.hamburger');
 
 // DELEGATION
 if (mapBox) {
@@ -67,6 +68,20 @@ if (bookBtn)
     const { tourId } = e.target.dataset;
     bookTour(tourId);
   });
+
+//Hamburger menu
+hamburger.addEventListener('click', () => {
+  const mobileNav = document.querySelector('.mobileNav');
+
+  if (mobileNav.style.zIndex == 1) {
+    mobileNav.style.zIndex = -1;
+  } else {
+    setTimeout(() => {
+      mobileNav.style.zIndex = 1;
+    }, 500);
+  }
+  mobileNav.classList.toggle('openDrawer');
+});
 
 const alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) showAlert('success', alertMessage, 20);
