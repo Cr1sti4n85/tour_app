@@ -1,13 +1,13 @@
-import { displayMap } from './mapbox';
-import { login, logout } from './login';
-import { updateSettings } from './updateSettings';
-import { bookTour } from './stripe';
-import { showAlert } from './alerts';
+import { displayMap } from './mapbox.js';
+import { login, logout } from './login.js';
+import { updateSettings } from './updateSettings.js';
+import { bookTour } from './stripe.js';
+import { showAlert } from './alerts.js';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
-const logOutBtn = document.querySelector('.nav__el--logout');
+const logOutBtn = document.querySelectorAll('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
@@ -27,7 +27,12 @@ if (loginForm)
     login(email, password);
   });
 
-if (logOutBtn) logOutBtn.addEventListener('click', logout);
+if (logOutBtn) {
+  logOutBtn.forEach((el) => {
+    el.addEventListener('click', logout);
+  });
+}
+// logOutBtn.addEventListener('click', logout);
 
 if (userDataForm)
   userDataForm.addEventListener('submit', (e) => {
@@ -72,10 +77,14 @@ if (bookBtn)
 //Hamburger menu
 hamburger.addEventListener('click', () => {
   const mobileNav = document.querySelector('.mobileNav');
-
+  const main = document.querySelector('.main');
   if (mobileNav.style.zIndex == 1) {
     mobileNav.style.zIndex = -1;
+    setTimeout(() => {
+      main.style.zIndex = 'auto';
+    }, 500);
   } else {
+    main.style.zIndex = -3;
     setTimeout(() => {
       mobileNav.style.zIndex = 1;
     }, 500);

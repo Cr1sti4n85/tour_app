@@ -45,12 +45,12 @@ body {
 
 .main {
   background-color: #f7f7f7;
-  padding: 4.5rem 6rem;
+  padding: 5rem 6rem;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   position: relative;
-  z-index: -3;
+  /* z-index: -3; */
 }
 
 .flex {
@@ -302,7 +302,7 @@ body {
 .header {
   background-color: #444;
   padding: 0 5rem;
-  height: 9rem;
+  height: 10rem;
   position: relative;
   /* z-index: -1; */
   display: -webkit-box;
@@ -1363,7 +1363,7 @@ body {
 .mobileNav {
   display: none;
   width: 100%;
-  height: 9rem;
+  height: 10rem;
   background-color: #242424;
   /* display: flex; */
   flex-direction: column;
@@ -1373,7 +1373,7 @@ body {
   z-index: -2;
   top: 0;
   left: 0;
-  padding: 16px 16px 0 0;
+  padding: 0 16px 0 0;
   transition: transform 0.5s ease;
 }
 
@@ -1381,12 +1381,16 @@ body {
   text-decoration: none;
   color: lightgray;
   margin: 16px 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .openDrawer {
-  transform: translateY(9rem);
+  transform: translateY(10rem);
 }
+
+/* .nav__el__mob {
+  font-size: 2rem;
+} */
 
 @media screen and (max-width: 1024px) {
   .card-container {
@@ -1433,10 +1437,32 @@ body {
   .mobileNav {
     display: flex;
   }
+
+  .login-form {
+    padding: 5rem 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 6rem 1rem;
+  }
+
+  .login-form {
+    padding: 5rem 2rem;
+  }
+
+  .heading-secondary {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 425px) {
   .header .nav__el {
     font-size: 1.2rem;
+  }
+
+  .heading-secondary {
+    font-size: 1.5rem;
   }
 }

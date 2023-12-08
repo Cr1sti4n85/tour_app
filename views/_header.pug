@@ -17,9 +17,9 @@ header.header
 		.bar3
 	nav.mobileNav
 		if user
-			a.nav__el--logout Log Out
-			a(href='/me') Profile
+			a.nav__el__mob.nav__el--logout Log Out
+			a.nav__el__mob(href='/me') Profile
 		else
-			a.nav__el(href='/login') Log in
-			a.nav__el(href='#') Sign Up
+			a.nav__el__mob(href='/login') Log in
+			a.nav__el__mob(href='#') Sign Up
 
